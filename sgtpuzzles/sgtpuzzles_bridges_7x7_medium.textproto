@@ -1,0 +1,114 @@
+# Copyright 2022 DeepMind Technologies Limited.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# proto-file: android_env/proto/task.proto
+# proto-message: android_env.Task
+
+id: "sgtpuzzles_bridges_7x7_medium"
+name: "Simon Tatham's puzzle - Bridges - 7x7 - Medium"
+description: "Draw horizontal or vertical bridges to link up all the islands. Bridges may be single or double; they may not cross; the islands must all end up connected to each other; the number in each island must match the number of bridges that end at that island."
+
+setup_steps: [
+  {
+    adb_request: {
+      install_apk: {
+        filesystem: {
+          path: "2020.07.08-sgtpuzzles-debug.apk"
+        }
+      }
+    }
+    success_condition: {
+      check_install: {
+        package_name: "name.boyle.chris.sgtpuzzles"
+        timeout_sec: 10.0
+      }
+    }
+  },
+  {  # Put the device in portrait mode.
+    adb_request: {
+      settings: {
+        name_space: SYSTEM
+        put: { key: "user_rotation" value: "0" }
+      }
+    }
+  }
+]
+
+reset_steps: [
+  { adb_request: { force_stop: { package_name: "name.boyle.chris.sgtpuzzles" } } },
+  { adb_request: { package_manager: { clear: { package_name: "name.boyle.chris.sgtpuzzles" } } } },
+  {
+    adb_request: {
+      start_activity: {
+        force_stop: true
+        full_activity: "name.boyle.chris.sgtpuzzles/name.boyle.chris.sgtpuzzles.SGTPuzzles"
+        extra_args: [
+            "--ez", '"RL_TASK_ENABLED"', '"true"',
+            # params: {width}x{height}i{% of island}e{expansion factor}m{max bridges / direction}{L for loops allowed}d{0=easy, 1=medium, 2=hard}
+            "--es", '"RL_TASK_GAME_CONFIG"', '"{ \\"gameId\\":\\"bridges\\",\\"params\\":\\"7x7i30e10m2d1\\"}"'
+        ]
+      }
+    }
+    success_condition: {
+      wait_for_app_screen: {
+        app_screen: {
+          activity: "name.boyle.chris.sgtpuzzles/name.boyle.chris.sgtpuzzles.GamePlay"
+          view_hierarchy_path: [
+          ]
+        }
+        timeout_sec: 10.0
+      }
+      num_retries: 10
+    }
+  },
+  {
+    adb_request: {
+      start_screen_pinning: {
+        full_activity: "name.boyle.chris.sgtpuzzles/name.boyle.chris.sgtpuzzles.GamePlay"
+      }
+    }
+  }
+]
+
+expected_app_screen: {
+  activity: "name.boyle.chris.sgtpuzzles/name.boyle.chris.sgtpuzzles.GamePlay"
+  view_hierarchy_path: [
+  ]
+}
+
+max_episode_sec: 7200  # Prevent infinite episodes.
+
+log_parsing_config: {
+
+  filters: ["AndroidRLTask:V"]
+
+  log_regexps: {
+    score: "^[Ss]core: ([-+]?[0-9]*\\.?[0-9]*)$"
+    reward: "^[Rr]eward: ([-+]?[0-9]*\\.?[0-9]*)$"
+    episode_end: "^episode[ _]end$"
+    extra: "^extra: (?P<name>[^ ]*)[ ]?(?P<extra>.*)$"
+    json_extra: "^json_extra: (?P<json_extra>.*)$"
+  }
+}
+
+extras_spec: [
+  # All of these a returned when the grid is changed
+  # The number islands in the game
+  { name: "islands" shape: [1], dtype: INT32 },
+  # The grid cells:
+  # [0-9]=island, ' '=empty,
+  # '|'=V-line, '"'=double V-line, '!'=wrong V-line
+  # '-'=H-line, '='=double H-line, '~'=wrong H-line
+  { name: "grid" shape: [7, 7], dtype: STRING_U1 }
+]

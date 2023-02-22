@@ -1,0 +1,53 @@
+all: puzzles.hlp puzzles.txt HACKING
+
+preprocessed.but: puzzles.but
+	sed 's/PREFIX-/$(BINPREFIX)/g' puzzles.but > preprocessed.but
+
+puzzles.hlp puzzles.txt: preprocessed.but
+	halibut --winhelp=puzzles.hlp --text=puzzles.txt preprocessed.but
+
+HACKING: devel.but
+	halibut --text=HACKING devel.but
+
+chm: puzzles.hhp
+puzzles.hhp: puzzles.but chm.but
+	halibut --html puzzles.but chm.but
+
+LANGUAGES := en $(patsubst po/%.po,%,$(wildcard po/*.po))
+
+po/puzzles-doc.pot: puzzles.but
+	po4a-gettextize -f halibut -m $< -p $@
+po/%.po: po/puzzles-doc.pot
+	msgmerge -o po/$*.new.po po/$*.po $<
+	mv po/$*.new.po po/$*.po
+update-po: po/puzzles-doc.pot $(wildcard po/*.po)
+.PHONY: update-po
+
+doc/puzzles.but.%: puzzles.but po/%.po
+	mkdir -p doc
+	po4a-translate -k 0 -f halibut -m puzzles.but -p po/$*.po -l $@
+.PRECIOUS: $(addprefix doc/puzzles.but.,$(LANGUAGES))
+
+doc/puzzles.txt.%: doc/puzzles.but.%
+	halibut --text=$@ --input-charset=UTF-8 $<
+all: $(addprefix doc/puzzles.txt.,$(filter-out en,$(LANGUAGES)))
+
+doc/puzzles.but.en: puzzles.but
+	mkdir -p doc
+	cp -f $< $@
+doc/%: doc/puzzles.but.%
+	mkdir -p $@
+	cd $@; halibut --html --input-charset=UTF-8 ../../$<
+	sed -i 's#<title>.*</title>#<title>Contents</title>#' $@/index.html
+	sed -i 's#<title>.*</title>#<title>Index</title>#' $@/docindex.html
+htmldocs: $(addprefix doc/,$(LANGUAGES))
+../assets/%: doc/%
+	mkdir -p ../assets
+	cp -v $</* $@
+androiddocs: $(addprefix ../assets/,$(LANGUAGES))
+all: htmldocs
+.PHONY: htmldocs all
+
+clean:
+	rm -f puzzles.hlp puzzles.txt preprocessed.but HACKING *.html *.hh[pck]
+	rm -rf doc

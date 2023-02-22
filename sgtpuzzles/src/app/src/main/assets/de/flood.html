@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=US-ASCII">
+<title>Flood</title>
+<link rel="previous" href="unruly.html">
+<link rel="ToC" href="index.html">
+<link rel="up" href="index.html">
+<link rel="index" href="docindex.html">
+<link rel="next" href="tracks.html">
+<style type="text/css">body { word-wrap: break-word; } body.night { color: #dddddd; background: #000000; } body.night a:link { color: #8888ff; } body.night a:visited { color: #cc88ff; }</style></head>
+<body>
+<p><a href="unruly.html">Previous</a> | <a href="index.html">Contents</a> | <a href="docindex.html">Index</a> | <a href="tracks.html">Next</a></p>
+<h1><a name="C39"></a>Chapter 39: <a name="i0"></a>Flood</h1>
+<p>
+Sie erhalten ein Gitter von Quadraten, die zuf&#228;llig in mehreren Farben eingef&#228;rbt sind. Bei jedem Zug k&#246;nnen Sie durch Fluten das Quadrat in der oberen linken Ecke mit einer Farbe Ihrer Wahl f&#252;llen (d.h. jedes Quadrat, das vom Startquadrat durch einen orthogonal verbundenen Pfad von Quadraten der gleichen Farbe verbunden ist, wird mit der neuen Farbe gef&#252;llt). Dadurch wird schrittweise mehr und mehr des Gitters mit dem Startquadrat verbunden.
+</p>
+<p>
+Ihr Ziel besteht darin, das gesamte Gitter mit so wenig Z&#252;gen wie m&#246;glich in eine Farbe zu verwandeln. Das Spiel setzt eine Grenze an Z&#252;gen, basierend auf seinem internen L&#246;sungsalgorithmus. Sie gewinnen, falls Sie das Gitter mit dieser Anzahl (oder weniger) an Z&#252;gen in die gleiche Farbe umwandeln.
+</p>
+<p>
+Ich habe dieses Spiel (mit einer festen Gittergr&#246;&#223;e, festen Anzahl an Farben und festen Anzahl an Z&#252;gen) unter http://floodit.appspot.com (nicht mehr erreichbar) gesehen.
+</p>
+<h2><a name="S39.1"></a>39.1 <a name="i1"></a>Flood-Steuerung</h2>
+<p>
+<em>Unter Android muss man dr&#252;cken statt links klicken und langes dr&#252;cken statt rechts klicken. Wo dieses Handbuch Buchstaben auf der Tastatur erw&#228;hnt, k&#246;nnen diese als Bildzeichen am Fu&#223; des Bildschirms gefunden werden (Strg und Umschalt sind nicht verf&#252;gbar). Es gibt auch ein optionaler Nacht-Modus, in dem dunklere Farben verwendet werden.</em>
+</p>
+<p>
+Um Flood zu spielen, klicken Sie mit der Maus in ein Quadrat. Die obere linke Ecke und alles damit verbundene wird mit der gleichen Farbe wie das von Ihnen angeklickte Quadrat geflutet. Das Klicken auf ein Quadrat mit der gleichen Farbe wie die obere linke Ecke hat keinen Effekt und z&#228;hlt daher nicht als Spielzug.
+</p>
+<p>
+Sie k&#246;nnen auch die Pfeiltasten verwenden, um den Cursor (ein leeres schwarzes Quadrat) &#252;ber das Gitter zu bewegen. Dr&#252;cken der Eingabetaste f&#252;llt die obere linke Ecke mit der gleichen Farbe wie das Quadrat unter dem Cursor.
+</p>
+<p>
+(Alle in <a href="common.html#S2.1">section 2.1</a> beschriebene Aktionen sind auch verf&#252;gbar.)
+</p>
+<h2><a name="S39.2"></a>39.2 <a name="i2"></a>Flood-Parameter</h2>
+<p>
+Diese Parameter sind von der Option &#8216;Custom...&#8217; im Men&#252; &#8216;Type&#8217; verf&#252;gbar.
+</p>
+<dl><dt>
+<em>Width</em> (Breite), <em>Height</em> (H&#246;he)
+</dt>
+<dd>
+Gr&#246;&#223;e des Gitters, in Quadraten.
+</dd>
+<dt>
+<em>Colours</em>
+</dt>
+<dd>
+Anzahl an Farben, die zum F&#252;llen des Gitters verwandt werden. Muss mindestens 3 sein (bei zwei Farben g&#228;be es bei jeder Stufe nur einen g&#252;ltigen Zug und somit keine zu treffende Auswahl) und h&#246;chstens 10.
+</dd>
+<dt>
+<em>Extra moves permitted</em>
+</dt>
+<dd>
+Steuert die Schwierigkeit des Puzzles durch Erh&#246;hung der Zugbegrenzung. In jedem neuen Gitter l&#228;sst Flood ein internes L&#246;sungsprogramm laufen, um seine eigene L&#246;sung zu erstellen und dann wird der Wert in diesem Feld zu der L&#228;nge der L&#246;sung von Flood hinzuaddiert, um die Spielzugbegrenzung zu erstellen. Ein Wert von 0 verlangt daher von Ihnen, so effizient wie der automatische L&#246;sungsfinder von Flood zu sein und ein gr&#246;&#223;erer Wert erleichtert es.
+<p>
+(Beachten Sie, dass das interne L&#246;sungsprogramm von Flood nicht notwendigerweise die k&#252;rzeste m&#246;gliche L&#246;sung findet, obwohl ich annehme, dass es ziemlich nahe dran ist. F&#252;r eine echte Herausforderung setzen Sie diesen Wert auf 0 und versuchen dann, ein Gitter in <em>echt weniger</em> Z&#252;gen zu l&#246;sen, als Ihnen vorgegeben werden!)
+</p>
+
+</dd>
+</dl>
+
+<hr><address></address></body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=US-ASCII">
+<title>Signpost</title>
+<link rel="previous" href="magnets.html">
+<link rel="ToC" href="index.html">
+<link rel="up" href="index.html">
+<link rel="index" href="docindex.html">
+<link rel="next" href="range.html">
+<style type="text/css">body { word-wrap: break-word; } body.night { color: #dddddd; background: #000000; } body.night a:link { color: #8888ff; } body.night a:visited { color: #cc88ff; }</style></head>
+<body>
+<p><a href="magnets.html">Previous</a> | <a href="index.html">Contents</a> | <a href="docindex.html">Index</a> | <a href="range.html">Next</a></p>
+<h1><a name="C34"></a>Chapter 34: <a name="i0"></a>Signpost</h1>
+<p>
+Sie haben ein Gitter von Quadraten. Jedes Quadrat (au&#223;er dem letzten) enth&#228;lt einen Pfeil und einige Quadrate enthalten Zahlen. Ihre Aufgabe besteht darin, die Quadrate zu verbinden, um eine fortlaufende Liste von Zahlen, beginnend mit 1 und verbunden in der Richtung der Pfeile, zu erstellen, so dass der Pfeil innerhalb des Quadrats mit der Zahl 1 auf das Quadrat mit der Nummer 2 zeigt, das wiederum auf das Quadrat mit der Zahl 3 zeigt usw. Jedes Quadrat kann eine beliebige Distanz vom vorherigen entfernt sein, solange es irgendwo in der Richtung des Pfeils liegt.
+</p>
+<p>
+Konventionsgem&#228;&#223; werden die erste und die letzte Zahl angezeigt. Anfangs mag auch eine oder mehrere Zahlen in der Mitte erscheinen.
+</p>
+<p>
+Dank f&#252;r dieses Puzzle geht an <a name="i1"></a>Janko <a href="#p0">[17]</a>, der es <a name="i2"></a>Pfeilpfad nannte.
+</p>
+<p>
+Signpost ist ein Beitrag von James Harvey zu dieser Sammlung.
+</p>
+<p><a name="p0"></a>
+[17] <a href="http://janko.at/Raetsel/Pfeilpfad/index.htm"><code>http://janko.at/Raetsel/Pfeilpfad/index.htm</code></a>
+</p>
+<h2><a name="S34.1"></a>34.1 <a name="i3"></a>Signpost-Steuerung</h2>
+<p>
+<em>Unter Android muss man dr&#252;cken statt links klicken und langes dr&#252;cken statt rechts klicken. Wo dieses Handbuch Buchstaben auf der Tastatur erw&#228;hnt, k&#246;nnen diese als Bildzeichen am Fu&#223; des Bildschirms gefunden werden (Strg und Umschalt sind nicht verf&#252;gbar). Es gibt auch ein optionaler Nacht-Modus, in dem dunklere Farben verwendet werden.</em>
+</p>
+<p>
+Um Signpost zu spielen, verbinden Sie Quadrate, indem Sie von einem Quadrat zu einem anderen ziehen und damit anzeigen, dass sie aufeinander folgen. Ziehen Sie mit dem linken Knopf von einem Quadrat zu seinem Nachfolger oder mit dem rechten Knopf von einem Quadrat zu seinem Vorg&#228;nger.
+</p>
+<p>
+Falls Sie zwei Quadrate auf diese Art verbinden und eines eine Zahl enth&#228;lt, wird die entsprechende Zahl im anderen Quadrat auftauchen. Falls Sie zwei Quadrate ohne Zahl verbinden, erhalten Sie tempor&#228;re algebraische Bezeichnungen: Beim ersten Auftreten werden sie mit &#8216;<code>a</code>&#8217; und &#8216;<code>a+1</code>&#8217; und dann mit &#8216;<code>b</code>&#8217; und &#8216;<code>b+1</code>&#8217; und so weiter benannt. Werden weitere Quadrate am Ende solch einer Kette verbunden, so werden sie alle mit dem gleichen Buchstaben bezeichnet.
+</p>
+<p>
+Wenn Sie auf ein Quadrat links oder rechts klicken, werden die Quadrate, zu denen eine g&#252;ltige Verbindung m&#246;glich ist, angezeigt.
+</p>
+<p>
+Der Pfeil in jedem Quadrat ist anf&#228;nglich schwarz und f&#228;rbt sich in grau um, wenn Sie das Quadrat mit seinem Nachfolger verbinden. Auch hat jedes Quadrat, das einen Vorg&#228;nger ben&#246;tigt, einen kleinen Punkt in der linken unteren Ecke, der beim Verbinden eines Quadrats damit verschwindet. Daher besteht Ihr Ziel darin, immer ein Quadrat mit einem schwarzen Pfeil mit einem Quadrat mit einem Punkt zu verbinden.
+</p>
+<p>
+Um irgend eine Verbindung f&#252;r ein bestimmtes Quadrat zu entfernen (sowohl eingehende als auch ausgehende), ziehen Sie es mit der linken Maustaste vom Gitter. Um eine ganze Kette zu entfernen, ziehen Sie ein beliebiges Quadrat aus der Kette mit der rechten Maustaste vom Gitter.
+</p>
+<p>
+Sie k&#246;nnen auch die Pfeiltasten verwenden, um sich auf den Gitterquadraten und -linen zu bewegen. Durch Dr&#252;cken der Eingabetaste &#252;ber einem Quadrat wird eine Verbindungsoperation begonnen und durch Dr&#252;cken der Eingabe &#252;ber einem Quadrat wird die Verbindung beendet, falls erlaubt. Durch Dr&#252;cken der Leertaste &#252;ber einem Quadrat werden die anderen Quadrate, die darauf zeigen, anzeigen und es Ihnen erlauben, eine R&#252;ckw&#228;rtsverbindung auszul&#246;sen. Erneutes Dr&#252;cken der Leertaste bricht dies ab.
+</p>
+<p>
+(Alle in <a href="common.html#S2.1">section 2.1</a> beschriebene Aktionen sind auch verf&#252;gbar.)
+</p>
+<h2><a name="S34.2"></a>34.2 <a name="i4"></a>Signpost-Parameter</h2>
+<p>
+Diese Parameter sind von der Option &#8216;Custom...&#8217; im Men&#252; &#8216;Type&#8217; verf&#252;gbar.
+</p>
+<dl><dt>
+<em>Width</em> (Breite), <em>Height</em> (H&#246;he)
+</dt>
+<dd>
+Gr&#246;&#223;e des Gitters in Quadraten
+</dd>
+<dt>
+<em>Force start/end to corners</em>
+</dt>
+<dd>
+Falls wahr, wird das Anfangs- und das Endquadrat immer in gegen&#252;berliegenden Ecken platziert (der Anfang links oben und das Ende rechts unten). Falls falsch, werden das Anfangs- und Endquadrat zuf&#228;llig platziert (allerdings werden beide immer angezeigt).
+</dd>
+</dl>
+
+<hr><address></address></body>
+</html>

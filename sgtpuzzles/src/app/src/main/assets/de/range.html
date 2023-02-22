@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=US-ASCII">
+<title>Range</title>
+<link rel="previous" href="signpost.html">
+<link rel="ToC" href="index.html">
+<link rel="up" href="index.html">
+<link rel="index" href="docindex.html">
+<link rel="next" href="pearl.html">
+<style type="text/css">body { word-wrap: break-word; } body.night { color: #dddddd; background: #000000; } body.night a:link { color: #8888ff; } body.night a:visited { color: #cc88ff; }</style></head>
+<body>
+<p><a href="signpost.html">Previous</a> | <a href="index.html">Contents</a> | <a href="docindex.html">Index</a> | <a href="pearl.html">Next</a></p>
+<h1><a name="C35"></a>Chapter 35: <a name="i0"></a>Range</h1>
+<p>
+Sie bekommen ein Gitter aus Quadraten, davon enthalten einige Zahlen. Ihre Aufgabe besteht darin, einige davon schwarz zu f&#228;rben, so dass mehrere Bedingungen erf&#252;llt sind:
+</p>
+<ul><li>
+Kein Quadrat mit einer Zahl ist schwarz gef&#228;rbt.
+</li>
+<li>
+Keine zwei schwarzen Quadrate befinden sich (horizontal oder vertikal) nebeneinander.
+</li>
+<li>
+F&#252;r jeweils zwei wei&#223;e Quadrate befindet sich ein Pfad zwischen ihnen, der nur wei&#223;e Quadrate verwendet.
+</li>
+<li>
+In jedem Quadrat mit einer Zahl gibt diese die Anzahl an wei&#223;en Quadraten, die von diesem Quadrat in jeder geraden (horizontalen oder vertikalen) Richtung erreicht werden k&#246;nnen, an, nach der entweder eine Mauer oder ein schwarzes Quadrat erreicht wird. Das Quadrat mit der Nummer ist in der Summe (einmal) enthalten.
+</li>
+</ul>
+<p>
+Beispielsweise muss ein Quadrat mit der Zahl eins gem&#228;&#223; dem letzten Kriterium vier schwarze Bl&#246;cke als Nachbar haben, allerdings ist es dann unm&#246;glich, dieses Quadrat mit einem au&#223;enstehenden wei&#223;en Quadrat zu verbinden, womit das zweitletzte Kriterium verletzt wird. Daher wird in keinem Quadrat die Zahl eins auftauchen.
+</p>
+<p>
+Dank f&#252;r dieses Puzzle geht an <a name="i1"></a>Nikoli, die es verschieden benannt haben: &#8216;Kurodoko&#8217;, &#8216;Kuromasu&#8217; oder &#8216;Where is Black Cells&#8217;. <a href="#p0">[18]</a>.
+</p>
+<p>
+Range ist ein Beitrag von Jonas K&#246;lker zu dieser Sammlung.
+</p>
+<p><a name="p0"></a>
+[18] <a href="http://www.nikoli.co.jp/en/puzzles/where_is_black_cells.html"><code>http://www.nikoli.co.jp/en/puzzles/where_is_black_cells.html</code></a>
+</p>
+<h2><a name="S35.1"></a>35.1 <a name="i2"></a>Range-Steuerung</h2>
+<p>
+<em>Unter Android muss man dr&#252;cken statt links klicken und langes dr&#252;cken statt rechts klicken. Wo dieses Handbuch Buchstaben auf der Tastatur erw&#228;hnt, k&#246;nnen diese als Bildzeichen am Fu&#223; des Bildschirms gefunden werden (Strg und Umschalt sind nicht verf&#252;gbar). Es gibt auch ein optionaler Nacht-Modus, in dem dunklere Farben verwendet werden.</em>
+</p>
+<p>
+Durch einen Klick mit der linken Taste f&#228;rben Sie ein Quadrat schwarz, oder mit der rechten Taste markieren Sie das Quadrat mit einem Punkt, um anzuzeigen, dass Sie sich sicher sind, dass es <em>nicht</em> schwarz gef&#228;rbt werden soll. Erneutes Klicken mit einem der beiden Tasten wird das Quadrat zyklisch durch die drei m&#246;glichen Zust&#228;nde (gef&#252;llt, mit Punkt oder leer) in gegenl&#228;ufigen Richtungen bringen.
+</p>
+<p>
+Sie k&#246;nnen auch die Pfeiltasten verwenden, um sich auf dem Gitter zu bewegen. Dr&#252;cken der Eingabetaste bewirkt das Gleiche wie die linke Taste, w&#228;hrend die Leertaste das Gleiche wie die rechte Taste durchf&#252;hrt. Bewegen mit den Pfeiltasten w&#228;hrend Umschalten gehalten ist wird Punkte in alle &#252;berstriffenen Quadrate setzen.
+</p>
+<p>
+(Alle in <a href="common.html#S2.1">section 2.1</a> beschriebene Aktionen sind auch verf&#252;gbar.)
+</p>
+<h2><a name="S35.2"></a>35.2 <a name="i3"></a>Range-Parameter</h2>
+<p>
+Diese Parameter sind von der Option &#8216;Custom...&#8217; im Men&#252; &#8216;Type&#8217; verf&#252;gbar.
+</p>
+<dl><dt>
+<em>Width</em> (Breite), <em>Height</em> (H&#246;he)
+</dt>
+<dd>
+Gr&#246;&#223;e des Gitters in Quadraten
+</dd>
+</dl>
+
+<hr><address></address></body>
+</html>

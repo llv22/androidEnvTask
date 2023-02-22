@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=US-ASCII">
+<title>Keen</title>
+<link rel="previous" href="filling.html">
+<link rel="ToC" href="index.html">
+<link rel="up" href="index.html">
+<link rel="index" href="docindex.html">
+<link rel="next" href="towers.html">
+<style type="text/css">body { word-wrap: break-word; } body.night { color: #dddddd; background: #000000; } body.night a:link { color: #8888ff; } body.night a:visited { color: #cc88ff; }</style></head>
+<body>
+<p><a href="filling.html">Previous</a> | <a href="index.html">Contents</a> | <a href="docindex.html">Index</a> | <a href="towers.html">Next</a></p>
+<h1><a name="C30"></a>Chapter 30: <a name="i0"></a>Keen</h1>
+<p>
+Sie bekommen ein Quadratgitter; jedes Quadrat darf eine Ziffer zwischen 1 und der Gr&#246;&#223;e des Gitters enthalten. Das Gitter ist in Bl&#246;cke verschiedener Form und Gr&#246;&#223;e eingeteilt, in denen sich arithmetische Hinweise befinden. Ihr Ziel besteht darin, das Gitter komplett mit Zahlen zu bef&#252;llen, so dass:
+</p>
+<ul><li>
+Jede Zeile jede Ziffer nur einmal enth&#228;lt
+</li>
+<li>
+Jede Spalte jede Ziffer nur einmal enth&#228;lt
+</li>
+<li>
+Die Ziffern in jedem Block kombiniert werden k&#246;nnen, um die im Hinweis angegebene Nummer mit dem im Hinweis gegebenen arithmetischen Operator zu bilden. Dies hei&#223;t:
+<ul><li>
+Ein Additionshinweis bedeutet, dass die Summe der Ziffern in den Bl&#246;cken eine gegebene Nummer sein muss. Beispielsweise bedeutet &#8216;15+&#8217;, dass die Summe der Bl&#246;cke 15 ergibt.
+</li>
+<li>
+Ein Multiplikationshinweis (z.B. &#8216;60&#215;&#8217;) bedeutet entsprechend, dass das Produkt der Ziffern in dem Block die angegebene Zahl ergeben muss.
+</li>
+<li>
+Ein Subtraktionshinweis wird immer in einen Block der Gr&#246;&#223;e zwei geschrieben und bedeutet, dass eine der Ziffern in dem Block um den angegeben Wert gr&#246;&#223;er als die andere sein muss. Beispielsweise bedeutet &#8216;2&#8722;&#8217;, dass eine der Ziffern im Block um zwei gr&#246;&#223;er ist als die andere, oder &#228;quivalent, dass eine Ziffer minus der anderen zwei betr&#228;gt. Die zwei Ziffern k&#246;nnen in dem Block aber beliebig verteilt sein.
+</li>
+<li>
+Ein Divisionshinweis (z.B. &#8216;3&#247;&#8217;) befindet sich entsprechend immer in einem Block der Gr&#246;&#223;e zwei und bedeutet, dass eine Ziffer geteilt durch die andere identisch zu der angegebenen Zahl ist.
+</li>
+</ul>
+<p>
+Beachten Sie, dass ein Block die gleiche Ziffer mehr als einmal beinhalten darf (vorausgesetzt, dass die identischen sich nicht in der gleichen Zeile und Spalte befinden). Diese Regel ist genau das Gegenteil der Regel im Modus &#8216;Killer&#8217; von Solo (siehe <a href="solo.html#C11">chapter 11</a>).
+</p>
+
+</li>
+</ul>
+<p>
+Dieses Puzzle erscheint in der Times unter dem Namen &#8216;<a name="i1"></a>KenKen&#8217;.
+</p>
+<h2><a name="S30.1"></a>30.1 <a name="i2"></a>Keen-Steuerung</h2>
+<p>
+<em>Unter Android muss man dr&#252;cken statt links klicken und langes dr&#252;cken statt rechts klicken. Wo dieses Handbuch Buchstaben auf der Tastatur erw&#228;hnt, k&#246;nnen diese als Bildzeichen am Fu&#223; des Bildschirms gefunden werden (Strg und Umschalt sind nicht verf&#252;gbar). Es gibt auch ein optionaler Nacht-Modus, in dem dunklere Farben verwendet werden.</em>
+</p>
+<p>
+Keen hat viel mit dem Steuersystem von Solo (und Unequal) gemeinsam.
+</p>
+<p>
+Um Keen zu spielen, klicken Sie einfach mit der Maus in ein leeres Quadrat und tippen Sie dann eine Ziffer auf der Tastatur, um dieses Quadrat zu f&#252;llen. Falls Sie einen Fehler gemacht haben, klicken Sie mit der Maus in das fehlerhafte Quadrat und dr&#252;cken Sie die Leertaste, um es wieder zu leeren (oder verwenden Sie die Undo-Funktion).
+</p>
+<p>
+Falls Sie in ein Quadrat <em>rechts-</em>klicken und dann eine Zahl tippen, wird diese Zahl im Quadrat als &#8216;Bleistiftmarkierung&#8217; eingetragen. Sie k&#246;nnen Bleistiftmarkierungen f&#252;r mehrere Zahlen im gleichen Quadrat vornehmen. Quadrate, in denen Zahlen eingef&#252;llt sind k&#246;nnen nicht auch gleichzeitig &#252;ber Bleistiftmarkierungen verf&#252;gen.
+</p>
+<p>
+Das Spiel ignoriert Bleistiftmarkierungen, daher k&#246;nnen Sie diese so einsetzen, wie Sie m&#246;chten: Sie k&#246;nnen Sie als Erinnerung verwenden, dass ein bestimmtes Quadrat noch mal untersucht werden muss, sobald Sie mehr &#252;ber eine bestimmte Zahl wissen, oder Sie k&#246;nnen sie als Liste m&#246;glicher Zahlen f&#252;r ein gegebenes Quadrat verwenden oder irgendetwas anderes, was Sie m&#246;gen.
+</p>
+<p>
+Um eine einzelne Bleistiftmarkierung zu entfernen, klicken Sie rechts in das Quadrat und tippen Sie die Zahl noch mal.
+</p>
+<p>
+Alle Bleistiftmarkierungen in einem Quadrat werden gel&#246;scht, wenn Sie linksklicken und eine Zahl eingeben oder wenn Sie linksklicken und die Leertaste dr&#252;cken. Auch rechtsklicken und dr&#252;cken der Leertaste wird die Bleistiftmarkierungen l&#246;schen.
+</p>
+<p>
+Wie bei Solo k&#246;nnen die Pfeiltasten zusammen mit den Zifferntasten verwendet werden, um Nummern oder Bleistiftmarkierungen zu setzen. Verwenden Sie die Pfeiltasten, um eine Hervorhebung &#252;ber das Gitter zu bewegen und geben Sie eine Ziffer in das hervorgehobene Quadrat ein. Durch Dr&#252;cken der Eingabetaste schalten Sie in einen Modus um, in dem Sie statt der Hervorhebung Bleistiftmarkierungen eingeben oder entfernen k&#246;nnen.
+</p>
+<p>
+Durch Dr&#252;cken von &#187;M&#171; wird ein kompletter Satz an Bleistiftmarkierungen in jedes Quadrat, das noch keine Hauptziffer enth&#228;lt, eingef&#252;gt.
+</p>
+<p>
+(Alle in <a href="common.html#S2.1">section 2.1</a> beschriebene Aktionen sind auch verf&#252;gbar.)
+</p>
+<h2><a name="S30.2"></a>30.2 <a name="i3"></a>Keen-Parameter</h2>
+<p>
+Diese Parameter sind von der Option &#8216;Custom...&#8217; im Men&#252; &#8216;Type&#8217; verf&#252;gbar.
+</p>
+<dl><dt>
+<em>Grid size</em>
+</dt>
+<dd>
+Legt die Gr&#246;&#223;e des Gitters fest. Die untere Grenze ist 3; die obere Grenze ist 9 (da die Benutzerschnittstelle mit &#8216;Ziffern&#8217; gr&#246;&#223;er als 9 schwerer w&#252;rde!).
+</dd>
+<dt>
+<em>Difficulty</em>
+</dt>
+<dd>
+Steuert die Schwierigkeit des erstellten Puzzles. In der Stufe &#187;Unreasonable&#171; wird R&#252;ckverfolgung ben&#246;tigt, die L&#246;sung sollte aber immer noch eindeutig sein. Die Stufen dazwischen ben&#246;tigen zunehmend komplexe Schlussfolgerungen, um R&#252;ckverfolgung zu vermeiden.
+</dd>
+<dt>
+<em>Multiplication only</em>
+</dt>
+<dd>
+Falls dies aktiviert ist, sind alle K&#228;sten Multiplikationsk&#228;sten. Mit dieser Regel ist das Puzzle als &#8216;Inshi No Heya&#8217; bekannt.
+</dd>
+</dl>
+
+<hr><address></address></body>
+</html>

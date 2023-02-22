@@ -1,0 +1,2 @@
+include ':DroidFishApp', ':CuckooChessEngine', ':CuckooChessApp', ':CuckooChess', ':EngineServer'
+include ':rl-task-java', ':rl-task-android'

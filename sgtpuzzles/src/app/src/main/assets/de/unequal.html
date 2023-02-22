@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=US-ASCII">
+<title>Unequal</title>
+<link rel="previous" href="bridges.html">
+<link rel="ToC" href="index.html">
+<link rel="up" href="index.html">
+<link rel="index" href="docindex.html">
+<link rel="next" href="galaxies.html">
+<style type="text/css">body { word-wrap: break-word; } body.night { color: #dddddd; background: #000000; } body.night a:link { color: #8888ff; } body.night a:visited { color: #cc88ff; }</style></head>
+<body>
+<p><a href="bridges.html">Previous</a> | <a href="index.html">Contents</a> | <a href="docindex.html">Index</a> | <a href="galaxies.html">Next</a></p>
+<h1><a name="C27"></a>Chapter 27: <a name="i0"></a>Unequal</h1>
+<p>
+Sie bekommen ein Quadratgitter; jedes Quadrat darf eine Ziffer zwischen 1 und der Gr&#246;&#223;e des Gitters enthalten. Zwischen einigen Quadraten befindet sich ein Hinweiszeichen. Ihr Ziel besteht darin, das Gitter komplett mit Zahlen zu bef&#252;llen, so dass:
+</p>
+<ul><li>
+Jede Zeile jede Ziffer nur einmal enth&#228;lt
+</li>
+<li>
+Jede Spalte jede Ziffer nur einmal enth&#228;lt
+</li>
+<li>
+Alle Hinweiszeichen sind beachtet worden.
+</li>
+</ul>
+<p>
+Es gibt zwei Modi f&#252;r dieses Spiel, &#8216;Unequal&#8217; und &#8216;Adjacent&#8217;.
+</p>
+<p>
+Im Modus &#8216;Unequal&#8217; sind die Hinweiszeichen Gr&#246;&#223;er-Als-Symbole, die angeben, dass der Wert eines Quadrats gr&#246;&#223;er als der seines Nachbarn ist. In diesem Modus k&#246;nnten nicht alle Hinweise sichtbar sein, insbesondere bei h&#246;heren Schwierigkeitsgraden.
+</p>
+<p>
+Im Modus &#8216;Adjacent&#8217; sind die Hinweiszeichen senkrechte Striche, die angeben, dass der Wert eines Quadrats nummerisch benachbart (d.h. einen gr&#246;&#223;er oder kleiner) zu dem des Nachbarn ist. In diesem Modus sind alle Hinweise immer sichtbar; Abwesenheit eines Striches bedeutet daher, dass der Wert eines Quadrats definitiv nicht nummerisch benachbart zu dem des Nachbarquadrats ist.
+</p>
+<p>
+Im Schwierigkeitsgrad &#8216;Trivial&#8217; (erreichbar &#252;ber die &#8216;Custom&#8217;-Spieltypauswahl) gibt es keine Gr&#246;&#223;er-als-Zeichen im &#8216;Unequal&#8217;-Modus; das Puzzle besteht nur darin, das <a name="i1"></a>Lateinische Quadrat zu l&#246;sen.
+</p>
+<p>
+Zum Zeitpunkt des Schreibens erscheint der Modus &#8216;Unequal&#8217; des Puzzles in der &#187;Guardian weekly&#171; unter dem Namen &#8216;<a name="i2"></a>Futoshiki&#8217;.
+</p>
+<p>
+Unequal ist ein Beitrag von James Harvey zu dieser Sammlung.
+</p>
+<h2><a name="S27.1"></a>27.1 <a name="i3"></a>Unequal-Steuerung</h2>
+<p>
+<em>Unter Android muss man dr&#252;cken statt links klicken und langes dr&#252;cken statt rechts klicken. Wo dieses Handbuch Buchstaben auf der Tastatur erw&#228;hnt, k&#246;nnen diese als Bildzeichen am Fu&#223; des Bildschirms gefunden werden (Strg und Umschalt sind nicht verf&#252;gbar). Es gibt auch ein optionaler Nacht-Modus, in dem dunklere Farben verwendet werden.</em>
+</p>
+<p>
+Unequal hat viel mit dem Steuersystem von Solo gemeinsam.
+</p>
+<p>
+Um Unequal zu spielen, klicken Sie mit der Maus einfach in ein leeres Quadrat und geben mit der Tastatur eine Ziffer oder einen Buchstaben ein, um das Quadrat zu f&#252;llen. Falls Sie einen Fehler machen, klicken Sie mit der Maus in das falsch ausgef&#252;llte Quadrat und dr&#252;cken Sie die Leertaste, um es wieder zu leeren (oder verwenden Sie die Undo-Funktionalit&#228;t).
+</p>
+<p>
+Falls Sie in ein Quadrat <em>rechts-</em>klicken und dann eine Zahl tippen, wird diese Zahl im Quadrat als &#8216;Bleistiftmarkierung&#8217; eingetragen. Sie k&#246;nnen Bleistiftmarkierungen f&#252;r mehrere Zahlen im gleichen Quadrat vornehmen. Quadrate, in denen Zahlen eingef&#252;llt sind k&#246;nnen nicht auch gleichzeitig &#252;ber Bleistiftmarkierungen verf&#252;gen.
+</p>
+<p>
+Das Spiel ignoriert Bleistiftmarkierungen, daher k&#246;nnen Sie diese so einsetzen, wie Sie m&#246;chten: Sie k&#246;nnen Sie als Erinnerung verwenden, dass ein bestimmtes Quadrat noch mal untersucht werden muss, sobald Sie mehr &#252;ber eine bestimmte Zahl wissen, oder Sie k&#246;nnen sie als Liste m&#246;glicher Zahlen f&#252;r ein gegebenes Quadrat verwenden oder irgendetwas anderes, was Sie m&#246;gen.
+</p>
+<p>
+Um eine einzelne Bleistiftmarkierung zu entfernen, klicken Sie rechts in das Quadrat und tippen Sie die Zahl noch mal.
+</p>
+<p>
+Alle Bleistiftmarkierungen in einem Quadrat werden gel&#246;scht, wenn Sie linksklicken und eine Zahl eingeben oder wenn Sie linksklicken und die Leertaste dr&#252;cken. Auch rechtsklicken und dr&#252;cken der Leertaste wird die Bleistiftmarkierungen l&#246;schen.
+</p>
+<p>
+Wie bei Solo k&#246;nnen die Pfeiltasten zusammen mit den Zifferntasten verwendet werden, um Nummern oder Bleistiftmarkierungen zu setzen. Sie k&#246;nnen auch die Taste &#8216;M&#8217; verwenden, um jeden Vorschlag automatisch eintragen zu lassen, der dann zur Entfernung (soweit notwendig) bereit steht oder die Taste &#8216;H&#8217;, um das gleiche durchzuf&#252;hren und zus&#228;tzlich alle offensichtlichen Vorschl&#228;ge zu entfernen.
+</p>
+<p>
+Verwenden Sie alternativ die Pfeiltasten, um die Markierung im Gitter zu bewegen. Durch Dr&#252;cken der Eingabetaste schalten Sie die Markierung um (von normaler Markierung zur Bleistiftmarkierung). Geben Sie die Zahl ein, um diese in geeigneter Weise in das Quadrat einzutragen. Die Eingabe von 0 oder die Verwendung der Leertaste wird ein gef&#252;lltes Quadrat leeren.
+</p>
+<p>
+Durch Linksklick auf einen Hinweis wird dieser als erledigt markiert (ausgegraut) oder die Markierung entfernt, falls er bereits markiert ist. Durch Halten von Strg oder Umschalten und Dr&#252;cken einer Pfeiltaste werden entsprechende Hinweise neben dem Cursor in der angegebenen Richtung markiert.
+</p>
+<p>
+(Alle in <a href="common.html#S2.1">section 2.1</a> beschriebene Aktionen sind auch verf&#252;gbar.)
+</p>
+<h2><a name="S27.2"></a>27.2 <a name="i4"></a>Unequal-Parameter</h2>
+<p>
+Diese Parameter sind von der Option &#8216;Custom...&#8217; im Men&#252; &#8216;Type&#8217; verf&#252;gbar.
+</p>
+<dl><dt>
+<em>Mode</em>
+</dt>
+<dd>
+Modus des Puzzles (&#8216;Unequal&#8217; oder &#8216;Adjacent&#8217;)
+</dd>
+<dt>
+<em>Size (s*s)</em>
+</dt>
+<dd>
+Gr&#246;&#223;e des Gitters.
+</dd>
+<dt>
+<em>Difficulty</em>
+</dt>
+<dd>
+Steuert die Schwierigkeit des erstellten Puzzles. Auf der Stufe Trivial gibt es keine Gr&#246;&#223;er-als-Zeichen; das zu l&#246;sende Puzzle ist nur das lateinische Quadrat. In der Recursive-Stufe (nur &#252;ber die &#8216;Custom&#8217;-Spieltypauswahl verf&#252;gbar) ist R&#252;ckverfolgung notwendig, aber die L&#246;sung sollte immer noch eindeutig sein. Die Stufen dazwischen ben&#246;tigen zunehmend komplexe Schlussfolgerungen, um R&#252;ckverfolgung zu vermeiden.
+</dd>
+</dl>
+
+<hr><address></address></body>
+</html>
