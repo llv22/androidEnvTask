@@ -35,7 +35,18 @@ python /Users/llv23/Documents/05_machine_learning/04_phd/4_flow_action/android_e
 
 Run acme agent:
 
+* prepare the environment
+
 ```bash
-pip install dm_acme==0.2.4
+# stored in '/Users/llv23/Documents/05_machine_learning/dl_gpu_mac/dl-built-libraries/android_env/dm_reverb_nightly-0.8.0.dev20230222-cp38-cp38-macosx_10_9_x86_64.whl'
+pip install dm_reverb_nightly-0.8.0.dev20230222-cp38-cp38-macosx_10_9_x86_64.whl
+pip install dm-sonnet==2.0.1
+pip install tensorflow_probability==0.16.0 or pip install tensorflow_probability==0.17.0
+pip install trfl==1.2.0
+```
+
+* run agent
+
+```bash
 python /Users/llv23/Documents/05_machine_learning/04_phd/4_flow_action/android_env/examples/run_acme_agent.py --avd_name Pixel_XL_UpsideDownCake --android_avd_home /Users/llv23/.android/avd --android_sdk_root /Users/llv23/Documents/00_dev_engineering/07_android/android-sdk-macosx --emulator_path /Users/llv23/Documents/00_dev_engineering/07_android/android-sdk-macosx/emulator/emulator --adb_path /Users/llv23/Documents/00_dev_engineering/07_android/android-sdk-macosx/platform-tools/adb --task_path /Users/llv23/Documents/OneDrive/PhD/02_research/guided-dialog/04_flow_to_action/1_AndroidEnv/0_tasks/mdp/mdp_0000.textproto
 ```
