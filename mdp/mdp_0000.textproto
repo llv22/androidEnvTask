@@ -78,7 +78,8 @@ reset_steps: [
         timeout_sec: 10.0
       }
     }
-  },
+  }
+  ,
   {
     adb_request: {
       start_screen_pinning: {

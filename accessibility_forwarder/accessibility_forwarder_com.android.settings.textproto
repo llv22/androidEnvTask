@@ -24,7 +24,7 @@ setup_steps: [
     adb_request: {
       install_apk: {
         filesystem: {
-          path: "/Users/llv23/Documents/OneDrive/PhD/02_research/guided-dialog/04_flow_to_action/1_AndroidEnv/0_tasks/accessibility_forwarder/accessibility_forwarder.apk"
+          path: "accessibility_forwarder.apk"
         }
       }
     }
@@ -62,34 +62,34 @@ setup_steps: [
 ]
 
 reset_steps: [
-  { adb_request: { force_stop: { package_name: "com.android.calculator2" } } },
-  { adb_request: { package_manager: { clear: { package_name: "com.android.calculator2" } } } },
-  {
-    adb_request: {
-      start_activity: {
-        force_stop: true
-        full_activity: "com.android.calculator2/com.android.calculator2.Calculator"
-      }
-    }
-    success_condition: {
-      wait_for_app_screen: {
-        app_screen: {
-          activity: "com.android.calculator2/com.android.calculator2.Calculator"
-          view_hierarchy_path: [
-          ]
-        }
-        timeout_sec: 10.0
-      }
-      num_retries: 10
-    }
-  }
+  # { adb_request: { force_stop: { package_name: "com.android.settings" } } },
+  # { adb_request: { package_manager: { clear: { package_name: "com.android.settings" } } } },
+  # {
+  #   adb_request: {
+  #     # start_activity: {
+  #     #   force_stop: true
+  #     #   full_activity: "com.android.settings/.Settings$UserSettingsActivity"
+  #     # }
+  #   }
+  #   success_condition: {
+  #     # wait_for_app_screen: {
+  #     #   app_screen: {
+  #     #     activity: "com.android.settings/.Settings$UserSettingsActivity"
+  #     #     view_hierarchy_path: [
+  #     #     ]
+  #     #   }
+  #     #   timeout_sec: 10.0
+  #     # }
+  #     # num_retries: 10
+  #   }
+  # }
 ]
 
-expected_app_screen: {
-  activity: "com.android.calculator2/com.android.calculator2.Calculator"
-  view_hierarchy_path: [
-  ]
-}
+# expected_app_screen: {
+#   # activity: "com.android.settings/.Settings$UserSettingsActivity"
+#   # view_hierarchy_path: [
+#   # ]
+# }
 
 max_episode_sec: 7200  # Prevent infinite episodes.
 
