@@ -1,13 +1,26 @@
-# Run sample
+<!-- markdownlint-disable MD029 -->
+# Run sample based on accessibility_forwarder.apk
+
+1. Enter the folder first
 
 ```bash
-python /Users/llv23/Documents/05_machine_learning/04_phd/4_flow_action/android_env/examples/run_human_agent.py --avd_name Pixel_XL_UpsideDownCake --android_avd_home /Users/llv23/.android/avd --android_sdk_root /Users/llv23/Documents/00_dev_engineering/07_android/android-sdk-macosx --emulator_path /Users/llv23/Documents/00_dev_engineering/07_android/android-sdk-macosx/emulator/emulator --adb_path /Users/llv23/Documents/00_dev_engineering/07_android/android-sdk-macosx/platform-tools/adb --task_path /Users/llv23/Documents/OneDrive/PhD/02_research/guided-dialog/04_flow_to_action/1_AndroidEnv/0_tasks/accessibility_forwarder/accessibility_forwarder_clock_set_timer.textproto
+cd accessibility_forwarder
 ```
 
-```bash
-python /Users/llv23/Documents/05_machine_learning/04_phd/4_flow_action/android_env/examples/run_human_agent.py --avd_name Pixel_XL_UpsideDownCake --android_avd_home /Users/llv23/.android/avd --android_sdk_root /Users/llv23/Documents/00_dev_engineering/07_android/android-sdk-macosx --emulator_path /Users/llv23/Documents/00_dev_engineering/07_android/android-sdk-macosx/emulator/emulator --adb_path /Users/llv23/Documents/00_dev_engineering/07_android/android-sdk-macosx/platform-tools/adb --task_path /Users/llv23/Documents/OneDrive/PhD/02_research/guided-dialog/04_flow_to_action/1_AndroidEnv/0_tasks/accessibility_forwarder/accessibility_forwarder_calculator_history.textproto
-```
+2. Run clock set with RL
 
 ```bash
-python /Users/llv23/Documents/05_machine_learning/04_phd/4_flow_action/android_env/examples/run_human_agent.py --avd_name Pixel_XL_UpsideDownCake --android_avd_home /Users/llv23/.android/avd --android_sdk_root /Users/llv23/Documents/00_dev_engineering/07_android/android-sdk-macosx --emulator_path /Users/llv23/Documents/00_dev_engineering/07_android/android-sdk-macosx/emulator/emulator --adb_path /Users/llv23/Documents/00_dev_engineering/07_android/android-sdk-macosx/platform-tools/adb --task_path /Users/llv23/Documents/OneDrive/PhD/02_research/guided-dialog/04_flow_to_action/1_AndroidEnv/0_tasks/accessibility_forwarder/accessibility_forwarder_com.android.settings.textproto
+python ../../android_env/examples/run_human_agent.py --avd_name Pixel_XL_UpsideDownCake --android_avd_home ~/.android/avd --android_sdk_root ${ANDROID_SDK_ROOT} --emulator_path ${ANDROID_SDK_ROOT}/emulator/emulator --adb_path ${ANDROID_SDK_ROOT}/platform-tools/adb --task_path accessibility_forwarder_clock_set_timer.textproto
+```
+
+3. Run Calculator set with RL (Invalid for current avd)
+
+```bash
+python ../../android_env/examples/run_human_agent.py --avd_name Pixel_XL_UpsideDownCake --android_avd_home ~/.android/avd --android_sdk_root ${ANDROID_SDK_ROOT} --emulator_path ${ANDROID_SDK_ROOT}/emulator/emulator --adb_path ${ANDROID_SDK_ROOT}/platform-tools/adb --task_path accessibility_forwarder_calculator_history.textproto
+```
+
+4. Enter system
+
+```bash
+python ../../android_env/examples/run_human_agent.py --avd_name Pixel_XL_UpsideDownCake --android_avd_home ~/.android/avd --android_sdk_root ${ANDROID_SDK_ROOT} --emulator_path ${ANDROID_SDK_ROOT}/emulator/emulator --adb_path ${ANDROID_SDK_ROOT}/platform-tools/adb --task_path accessibility_forwarder_com.android.settings.textproto
 ```
